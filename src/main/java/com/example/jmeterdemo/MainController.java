@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
 
     @Autowired
-    private BookService bookService = new BookService();
+    private final BookService bookService = new BookService();
 
     @GetMapping("/perf/book/{id}")
     Book getBookPerformanceTest(@PathVariable String id) {
