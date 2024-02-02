@@ -15,6 +15,9 @@ public class MainController {
 
     @GetMapping("/perf/book/{id}")
     Book getBookPerformanceTest(@PathVariable String id) {
-        return bookService.getBookPerformanceTesting(id);
+        log.info("Got request");
+        Book book = bookService.getBookPerformanceTesting(id);
+        log.info("Sending response");
+        return book;
     }
 }
